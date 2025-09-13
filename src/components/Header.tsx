@@ -208,16 +208,16 @@ const Header = () => {
                             DevOps & Support
                           </h4>
                           <div className="space-y-3">
-                            <Link to="/managed-services" className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 py-1 hover:translate-x-1 transform">
+                            <Link to="/cloud/cicd-pipelines" className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 py-1 hover:translate-x-1 transform">
                               CI/CD Pipelines
                             </Link>
-                            <Link to="/managed-services" className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 py-1 hover:translate-x-1 transform">
+                            <Link to="/cloud/infrastructure-as-code" className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 py-1 hover:translate-x-1 transform">
                               Infrastructure as Code
                             </Link>
                             <Link to="/managed-services" className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 py-1 hover:translate-x-1 transform">
                               Managed Services
                             </Link>
-                            <Link to="/managed-services" className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 py-1 hover:translate-x-1 transform">
+                            <Link to="/cloud/24-7-support" className="block text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 py-1 hover:translate-x-1 transform">
                               24/7 Support
                             </Link>
                           </div>
@@ -350,10 +350,10 @@ const Header = () => {
                     <div className="py-2">
                       <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">DevOps & Support</div>
                       <div className="space-y-1">
-                        <Link to="/managed-services" className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors" onClick={closeMenu}>CI/CD Pipelines</Link>
-                        <Link to="/managed-services" className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors" onClick={closeMenu}>Infrastructure as Code</Link>
+                        <Link to="/cloud/cicd-pipelines" className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors" onClick={closeMenu}>CI/CD Pipelines</Link>
+                        <Link to="/cloud/infrastructure-as-code" className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors" onClick={closeMenu}>Infrastructure as Code</Link>
                         <Link to="/managed-services" className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors" onClick={closeMenu}>Managed Services</Link>
-                        <Link to="/managed-services" className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors" onClick={closeMenu}>24/7 Support</Link>
+                        <Link to="/cloud/24-7-support" className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors" onClick={closeMenu}>24/7 Support</Link>
                       </div>
                     </div>
                   </div>
