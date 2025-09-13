@@ -63,6 +63,9 @@ const CloudSecurity = lazy(() => import('@/pages/cloud/CloudSecurity'));
 const BackupSolutions = lazy(() => import('@/pages/cloud/BackupSolutions'));
 const DisasterRecovery = lazy(() => import('@/pages/cloud/DisasterRecovery'));
 const ComplianceManagement = lazy(() => import('@/pages/cloud/ComplianceManagement'));
+const CICDPipelines = lazy(() => import('@/pages/cloud/CICDPipelines'));
+const InfrastructureAsCode = lazy(() => import('@/pages/cloud/InfrastructureAsCode'));
+const TwentyFourSevenSupport = lazy(() => import('@/pages/cloud/TwentyFourSevenSupport'));
 
 // Optimized QueryClient configuration
 const queryClient = new QueryClient({
@@ -272,6 +275,21 @@ const App = () => (
           <Route path="/cloud/compliance" element={
             <Suspense fallback={<PageLoader />}>
               <ComplianceManagement />
+            </Suspense>
+          } />
+          <Route path="/cloud/cicd-pipelines" element={
+            <Suspense fallback={<PageLoader />}>
+              <CICDPipelines />
+            </Suspense>
+          } />
+          <Route path="/cloud/infrastructure-as-code" element={
+            <Suspense fallback={<PageLoader />}>
+              <InfrastructureAsCode />
+            </Suspense>
+          } />
+          <Route path="/cloud/24-7-support" element={
+            <Suspense fallback={<PageLoader />}>
+              <TwentyFourSevenSupport />
             </Suspense>
           } />
           
