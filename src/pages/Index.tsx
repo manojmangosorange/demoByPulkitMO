@@ -6,6 +6,8 @@ import AssociatedWithSection from '@/components/AssociatedWithSection';
 import ClientLogosSection from '@/components/ClientLogosSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import DynamicSEO from '@/components/DynamicSEO';
+import { generateOrganizationSchema, generateWebsiteSchema, generateMetaDescription, generateKeywords } from '@/utils/seo';
 
 const Index = () => {
   useEffect(() => {
@@ -21,8 +23,20 @@ const Index = () => {
     }
   }, []);
 
+  const structuredData = [
+    generateOrganizationSchema(),
+    generateWebsiteSchema()
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <DynamicSEO
+        title="MangosOrange - Leading IT Services & Cloud Solutions Provider in India"
+        description={generateMetaDescription('home')}
+        keywords={generateKeywords('home')}
+        canonical="https://mangosorange.co.in"
+        jsonLd={structuredData}
+      />
       <Header />
       <HeroSection />
       <ServicesSection />

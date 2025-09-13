@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Seo from '@/components/SEO';
+import DynamicSEO from '@/components/DynamicSEO';
+import { generateMetaDescription, generateKeywords } from '@/utils/seo';
 
 const images = [
   {
@@ -53,9 +54,11 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo
+      <DynamicSEO
         title="MangosOrange Blog & Gallery | Updates and Events"
-        description={description}
+        description={generateMetaDescription('blog', description)}
+        keywords={generateKeywords('blog')}
+        canonical="https://mangosorange.co.in/blog"
         jsonLd={jsonLd}
       />
       <Header />
