@@ -4,47 +4,47 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const partnersData = [
   { 
     name: "AWS Partner", 
-    logo: "/lovable-uploads/01d957b7-bc44-4bb4-a246-84ca4d1fd887.png",
+    logo: "/lovable-uploads/01d957b7-bc44-4bb4-a246-84ca4d1fd887.webp",
     alt: "AWS Partner Badge"
   },
   { 
     name: "Microsoft Partner", 
-    logo: "/lovable-uploads/fdb84287-eccc-4577-8949-46977930e543.png",
+    logo: "/lovable-uploads/fdb84287-eccc-4577-8949-46977930e543.webp",
     alt: "Microsoft Partner Logo"
   },
   { 
     name: "Google Partner", 
-    logo: "/lovable-uploads/e52188a9-7b2e-4c43-bc35-70e60beaaf82.png",
+    logo: "/lovable-uploads/e52188a9-7b2e-4c43-bc35-70e60beaaf82.webp",
     alt: "Google Premier Partner Badge"
   },
   { 
     name: "HP", 
-    logo: "/lovable-uploads/fd833830-5daa-4781-9f25-190d72df51bc.png",
+    logo: "/lovable-uploads/fd833830-5daa-4781-9f25-190d72df51bc.webp",
     alt: "HP Logo"
   },
   { 
     name: "Acer", 
-    logo: "/lovable-uploads/01a2af85-69cc-4374-a2d0-dc11631b0ac8.png",
+    logo: "/lovable-uploads/01a2af85-69cc-4374-a2d0-dc11631b0ac8.webp",
     alt: "Acer Authorized Reseller Logo"
   },
   { 
     name: "Redington", 
-    logo: "/lovable-uploads/482f5bd6-b4cb-412c-8e9c-0830e3668957.png",
+    logo: "/lovable-uploads/482f5bd6-b4cb-412c-8e9c-0830e3668957.webp",
     alt: "Redington Seamless Partnerships Logo"
   },
   { 
     name: "Fortinet", 
-    logo: "/lovable-uploads/86611a82-04e8-4d65-80a2-e66c5ca623fe.png",
+    logo: "/lovable-uploads/86611a82-04e8-4d65-80a2-e66c5ca623fe.webp",
     alt: "Fortinet Logo"
   },
   { 
     name: "Canon", 
-    logo: "/lovable-uploads/c31df73f-5355-4e8e-bdcc-0f4074af8850.png",
+    logo: "/lovable-uploads/c31df73f-5355-4e8e-bdcc-0f4074af8850.webp",
     alt: "Canon Logo"
   },
   { 
     name: "ASUS", 
-    logo: "/lovable-uploads/8a726fde-f018-4a20-b22b-f4b732945ec3.png",
+    logo: "/lovable-uploads/8a726fde-f018-4a20-b22b-f4b732945ec3.webp",
     alt: "ASUS Logo - Inspiring Innovation Persistent Perfection"
   },
 ];

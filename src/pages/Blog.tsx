@@ -4,31 +4,31 @@ import Seo from '@/components/SEO';
 
 const images = [
   {
-    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-1.jpeg',
+    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-1.webp',
     caption: 'Offer letter distribution event - 1'
   },
   {
-    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-2.jpeg',
+    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-2.webp',
     caption: 'Offer letter distribution event - 2'
   },
   {
-    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-3.jpeg',
+    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-3.webp',
     caption: 'Offer letter distribution event - 3'
   },
   {
-    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-4.jpeg',
+    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-4.webp',
     caption: 'Offer letter distribution event - 4'
   },
   {
-    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-5.jpeg',
+    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-5.webp',
     caption: 'Offer letter distribution event - 5'
   },
   {
-    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-6.jpeg',
+    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-6.webp',
     caption: 'Offer letter distribution event - 6'
   },
   {
-    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-7.jpeg',
+    url: 'https://mangosorange.co.in/assets/img/testimonials/offer-7.webp',
     caption: 'Offer letter distribution event - 7'
   },
 ];

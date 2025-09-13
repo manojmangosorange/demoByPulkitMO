@@ -1,11 +1,39 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Globe, Smartphone, Zap, CheckCircle, Code, Monitor, Layers, Users, Target, Lightbulb, FileText, Rocket, Shield, Eye, Settings, Search, Database, Layout, Palette, Share2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import heroImage from '@/assets/web-development-service.jpg';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  Globe,
+  Smartphone,
+  Zap,
+  CheckCircle,
+  Code,
+  Monitor,
+  Layers,
+  Users,
+  Target,
+  Lightbulb,
+  FileText,
+  Rocket,
+  Shield,
+  Eye,
+  Settings,
+  Search,
+  Database,
+  Layout,
+  Palette,
+  Share2,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import heroImage from "@/assets/web-development-service.webp";
 
 const WebDevelopment = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
@@ -17,39 +45,75 @@ const WebDevelopment = () => {
     {
       icon: Layout,
       title: "Custom Website Development",
-      description: "Fully-functional, contemporary websites built with cutting-edge web development approaches to expand your online presence and provide a competitive edge.",
-      features: ["Custom Design & Development", "Responsive Web Design", "W3C Standards Compliance", "Cross-Browser Compatibility"]
+      description:
+        "Fully-functional, contemporary websites built with cutting-edge web development approaches to expand your online presence and provide a competitive edge.",
+      features: [
+        "Custom Design & Development",
+        "Responsive Web Design",
+        "W3C Standards Compliance",
+        "Cross-Browser Compatibility",
+      ],
     },
     {
       icon: Smartphone,
       title: "Mobile-First Development",
-      description: "Modern websites optimized for all devices with mobile-first approach ensuring exceptional user experience across smartphones, tablets, and desktops.",
-      features: ["Progressive Web Apps", "Mobile Optimization", "Touch-Friendly Interface", "App-Like Experience"]
+      description:
+        "Modern websites optimized for all devices with mobile-first approach ensuring exceptional user experience across smartphones, tablets, and desktops.",
+      features: [
+        "Progressive Web Apps",
+        "Mobile Optimization",
+        "Touch-Friendly Interface",
+        "App-Like Experience",
+      ],
     },
     {
       icon: Shield,
       title: "E-commerce Solutions",
-      description: "Robust online stores and e-commerce platforms with secure payment gateways, inventory management, and user-friendly shopping experiences.",
-      features: ["Payment Gateway Integration", "Inventory Management", "Order Processing", "Customer Management"]
+      description:
+        "Robust online stores and e-commerce platforms with secure payment gateways, inventory management, and user-friendly shopping experiences.",
+      features: [
+        "Payment Gateway Integration",
+        "Inventory Management",
+        "Order Processing",
+        "Customer Management",
+      ],
     },
     {
       icon: Settings,
       title: "CMS Development",
-      description: "Content Management Systems that empower you to easily update and manage your website content without technical knowledge.",
-      features: ["WordPress Development", "Custom CMS", "Content Management", "User-Friendly Admin Panel"]
+      description:
+        "Content Management Systems that empower you to easily update and manage your website content without technical knowledge.",
+      features: [
+        "WordPress Development",
+        "Custom CMS",
+        "Content Management",
+        "User-Friendly Admin Panel",
+      ],
     },
     {
       icon: Search,
       title: "SEO & Performance",
-      description: "Search engine optimized websites with lightning-fast loading speeds and performance optimization for better user experience and search rankings.",
-      features: ["SEO Optimization", "Performance Tuning", "Speed Optimization", "Core Web Vitals"]
+      description:
+        "Search engine optimized websites with lightning-fast loading speeds and performance optimization for better user experience and search rankings.",
+      features: [
+        "SEO Optimization",
+        "Performance Tuning",
+        "Speed Optimization",
+        "Core Web Vitals",
+      ],
     },
     {
       icon: Database,
       title: "API Integration & Backend",
-      description: "Seamless API integrations and robust backend development to connect your website with third-party services and databases.",
-      features: ["RESTful APIs", "Database Design", "Third-party Integrations", "Backend Development"]
-    }
+      description:
+        "Seamless API integrations and robust backend development to connect your website with third-party services and databases.",
+      features: [
+        "RESTful APIs",
+        "Database Design",
+        "Third-party Integrations",
+        "Backend Development",
+      ],
+    },
   ];
 
   const workProcess = [
@@ -57,104 +121,149 @@ const WebDevelopment = () => {
       icon: Target,
       step: "01",
       title: "Requirement & Planning",
-      description: "Understanding your business purpose, primary goals, and target audience to suggest the right plan for your project.",
-      details: ["Business Analysis", "Goal Definition", "Target Audience Research", "Project Planning"]
+      description:
+        "Understanding your business purpose, primary goals, and target audience to suggest the right plan for your project.",
+      details: [
+        "Business Analysis",
+        "Goal Definition",
+        "Target Audience Research",
+        "Project Planning",
+      ],
     },
     {
       icon: Palette,
-      step: "02", 
+      step: "02",
       title: "Design & Development",
-      description: "Designing the right page layouts, color combinations & screens. Implementing content, design screens and required frameworks.",
-      details: ["UI/UX Design", "Responsive Layouts", "Framework Implementation", "Content Integration"]
+      description:
+        "Designing the right page layouts, color combinations & screens. Implementing content, design screens and required frameworks.",
+      details: [
+        "UI/UX Design",
+        "Responsive Layouts",
+        "Framework Implementation",
+        "Content Integration",
+      ],
     },
     {
       icon: Eye,
       step: "03",
       title: "Testing & Quality Assurance",
-      description: "Comprehensive testing to ensure all forms, scripts, and functionality work correctly before launch.",
-      details: ["Functionality Testing", "Cross-Browser Testing", "Performance Testing", "Security Testing"]
+      description:
+        "Comprehensive testing to ensure all forms, scripts, and functionality work correctly before launch.",
+      details: [
+        "Functionality Testing",
+        "Cross-Browser Testing",
+        "Performance Testing",
+        "Security Testing",
+      ],
     },
     {
       icon: Rocket,
       step: "04",
       title: "Launch & Maintenance",
-      description: "Launching your website and providing ongoing monitoring, updates, and maintenance for optimal performance.",
-      details: ["Website Launch", "Performance Monitoring", "Regular Updates", "Technical Support"]
-    }
+      description:
+        "Launching your website and providing ongoing monitoring, updates, and maintenance for optimal performance.",
+      details: [
+        "Website Launch",
+        "Performance Monitoring",
+        "Regular Updates",
+        "Technical Support",
+      ],
+    },
   ];
 
   const technologies = [
-    { 
+    {
       icon: Code,
-      name: "React & Next.js", 
-      description: "Modern frontend frameworks for dynamic, interactive web applications",
-      category: "Frontend"
+      name: "React & Next.js",
+      description:
+        "Modern frontend frameworks for dynamic, interactive web applications",
+      category: "Frontend",
     },
-    { 
+    {
       icon: Database,
-      name: "Node.js & Express", 
-      description: "Powerful backend development for scalable server-side applications",
-      category: "Backend"
+      name: "Node.js & Express",
+      description:
+        "Powerful backend development for scalable server-side applications",
+      category: "Backend",
     },
-    { 
+    {
       icon: Layers,
-      name: "PHP & Laravel", 
-      description: "Robust server-side scripting and enterprise-grade framework",
-      category: "Backend"
+      name: "PHP & Laravel",
+      description:
+        "Robust server-side scripting and enterprise-grade framework",
+      category: "Backend",
     },
-    { 
+    {
       icon: Monitor,
-      name: "WordPress & CMS", 
+      name: "WordPress & CMS",
       description: "Content management systems for easy website maintenance",
-      category: "CMS"
+      category: "CMS",
     },
-    { 
+    {
       icon: Database,
-      name: "MySQL & MongoDB", 
-      description: "Reliable database solutions for data storage and management",
-      category: "Database"
+      name: "MySQL & MongoDB",
+      description:
+        "Reliable database solutions for data storage and management",
+      category: "Database",
     },
-    { 
+    {
       icon: Globe,
-      name: "Cloud Hosting", 
+      name: "Cloud Hosting",
       description: "Scalable cloud hosting solutions for optimal performance",
-      category: "Infrastructure"
-    }
+      category: "Infrastructure",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative page-top-spacing pb-16 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
         <div className="container mx-auto max-w-6xl relative">
-          <div 
+          <div
             ref={heroRef}
-            className={`grid lg:grid-cols-2 gap-12 items-center fade-up ${heroVisible ? 'visible' : ''}`}
+            className={`grid lg:grid-cols-2 gap-12 items-center fade-up ${
+              heroVisible ? "visible" : ""
+            }`}
           >
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  Custom Web Solutions & 
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Modern Development</span>
+                  Custom Web Solutions &
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    {" "}
+                    Modern Development
+                  </span>
                 </h1>
                 <p className="text-xl text-gray-800 leading-relaxed">
-                  We specialize in creating web-based solutions focused on user needs. Our natural ability to combine appropriate strategy, technology, and design guarantees solutions that exceed client standards. Build powerful, scalable web applications with cutting-edge technologies.
+                  We specialize in creating web-based solutions focused on user
+                  needs. Our natural ability to combine appropriate strategy,
+                  technology, and design guarantees solutions that exceed client
+                  standards. Build powerful, scalable web applications with
+                  cutting-edge technologies.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Fully-functional, contemporary websites for online presence expansion</span>
+                    <span>
+                      Fully-functional, contemporary websites for online
+                      presence expansion
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Cutting-edge web development approaches with complete attention</span>
+                    <span>
+                      Cutting-edge web development approaches with complete
+                      attention
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>W3C Standards and Client Hints Technology implementation</span>
+                    <span>
+                      W3C Standards and Client Hints Technology implementation
+                    </span>
                   </div>
                 </div>
               </div>
@@ -169,9 +278,9 @@ const WebDevelopment = () => {
             </div>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-              <img 
-                src={heroImage} 
-                alt="Professional Web Development Services" 
+              <img
+                src={heroImage}
+                alt="Professional Web Development Services"
                 className="relative w-full h-auto rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -187,19 +296,23 @@ const WebDevelopment = () => {
               Comprehensive Web Development Services
             </h2>
             <p className="text-xl text-gray-800 max-w-3xl mx-auto">
-              We provide a variety of services to our clients in the online web arena, spanning the entire development and design process with cutting-edge approaches.
+              We provide a variety of services to our clients in the online web
+              arena, spanning the entire development and design process with
+              cutting-edge approaches.
             </p>
           </div>
-          
-          <div 
+
+          <div
             ref={servicesRef}
-            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up ${servicesVisible ? 'visible' : ''}`}
+            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up ${
+              servicesVisible ? "visible" : ""
+            }`}
           >
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-card/50 backdrop-blur-sm"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -217,7 +330,10 @@ const WebDevelopment = () => {
                   <CardContent>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-gray-800">
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-gray-800"
+                        >
                           <CheckCircle className="w-4 h-4 text-primary" />
                           {feature}
                         </li>
@@ -240,19 +356,23 @@ const WebDevelopment = () => {
               How We Work
             </h2>
             <p className="text-xl text-gray-800 max-w-3xl mx-auto">
-              Our web development process includes developing comprehensive strategy, planning design workshops, building website maps, and creating dynamic user interfaces.
+              Our web development process includes developing comprehensive
+              strategy, planning design workshops, building website maps, and
+              creating dynamic user interfaces.
             </p>
           </div>
 
-          <div 
+          <div
             ref={processRef}
-            className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 fade-up ${processVisible ? 'visible' : ''}`}
+            className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 fade-up ${
+              processVisible ? "visible" : ""
+            }`}
           >
             {workProcess.map((process, index) => {
               const Icon = process.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-card/50 backdrop-blur-sm"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
@@ -275,7 +395,10 @@ const WebDevelopment = () => {
                   <CardContent>
                     <ul className="space-y-1">
                       {process.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-xs text-gray-800">
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-xs text-gray-800"
+                        >
                           <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
                           {detail}
                         </li>
@@ -298,19 +421,22 @@ const WebDevelopment = () => {
               Modern Technologies & Frameworks
             </h2>
             <p className="text-xl text-gray-800 max-w-3xl mx-auto">
-              We implement the most cutting-edge web development approaches using modern tools and frameworks for robust, scalable solutions.
+              We implement the most cutting-edge web development approaches
+              using modern tools and frameworks for robust, scalable solutions.
             </p>
           </div>
-          
-          <div 
+
+          <div
             ref={techRef}
-            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up ${techVisible ? 'visible' : ''}`}
+            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up ${
+              techVisible ? "visible" : ""
+            }`}
           >
             {technologies.map((tech, index) => {
               const Icon = tech.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-card/50 backdrop-blur-sm"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -346,29 +472,48 @@ const WebDevelopment = () => {
               Creating Lasting Connections
             </h2>
             <p className="text-xl text-gray-800 leading-relaxed mb-8">
-              We create and preserve lasting connections with our customers. We promise to provide you with online solutions that are incredibly useful. We can manage various domains from various sectors thanks to our capabilities. We develop dynamic websites and web applications with W3C Standards and Client Hints Technology.
+              We create and preserve lasting connections with our customers. We
+              promise to provide you with online solutions that are incredibly
+              useful. We can manage various domains from various sectors thanks
+              to our capabilities. We develop dynamic websites and web
+              applications with W3C Standards and Client Hints Technology.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Target className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Project Coordination</h3>
-                <p className="text-sm text-gray-800">Dedicated Project Coordinator for comprehensive project information and task management</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Project Coordination
+                </h3>
+                <p className="text-sm text-gray-800">
+                  Dedicated Project Coordinator for comprehensive project
+                  information and task management
+                </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Share2 className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Multi-Domain Expertise</h3>
-                <p className="text-sm text-gray-800">Managing various domains from different sectors with specialized knowledge</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Multi-Domain Expertise
+                </h3>
+                <p className="text-sm text-gray-800">
+                  Managing various domains from different sectors with
+                  specialized knowledge
+                </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Settings className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Annual Maintenance</h3>
-                <p className="text-sm text-gray-800">Ongoing maintenance, consulting, and support for optimal website performance</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Annual Maintenance
+                </h3>
+                <p className="text-sm text-gray-800">
+                  Ongoing maintenance, consulting, and support for optimal
+                  website performance
+                </p>
               </div>
             </div>
           </div>
@@ -383,7 +528,10 @@ const WebDevelopment = () => {
               Ready to Transform Your Digital Presence?
             </h2>
             <p className="text-xl text-gray-800">
-              Let's discuss your project and create a web solution that drives results for your business. Complete our request information form and our consulting representative will get in touch with you shortly.
+              Let's discuss your project and create a web solution that drives
+              results for your business. Complete our request information form
+              and our consulting representative will get in touch with you
+              shortly.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">

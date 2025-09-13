@@ -1,23 +1,69 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Seo from '@/components/SEO';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import CTASection from '@/components/CTASection';
-import { Link } from 'react-router-dom';
-import heroImage from '@/assets/professional-team-hero.jpg';
-import { Users, Briefcase, Globe, Building2, FileText, Wallet, Lightbulb, ArrowRight, Shield, Link2 } from 'lucide-react';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Seo from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import CTASection from "@/components/CTASection";
+import { Link } from "react-router-dom";
+import heroImage from "@/assets/professional-team-hero.webp";
+import {
+  Users,
+  Briefcase,
+  Globe,
+  Building2,
+  FileText,
+  Wallet,
+  Lightbulb,
+  ArrowRight,
+  Shield,
+  Link2,
+} from "lucide-react";
 
 const services = [
-  { icon: FileText, title: 'RPO (Recruitment Process Outsourcing)', to: '/staffing/rpo', description: 'End-to-end recruitment as a managed service.' },
-  { icon: Globe, title: 'Offshore Staffing', to: '/staffing/offshore-staffing', description: 'Build distributed teams with global talent.' },
-  { icon: Building2, title: 'On-Premise Staffing', to: '/staffing/on-premise-staffing', description: 'Scalable on-site workforce for operations.' },
-  { icon: Link2, title: 'Contract Solutions', to: '/staffing/contract-solutions', description: 'Flexible contract engagements for agility.' },
-  { icon: Users, title: 'Staffing Solutions', to: '/staffing', description: 'Tailored hiring across roles and industries.' },
-  { icon: Wallet, title: 'Payroll Outsourcing', to: '/staffing/payroll-outsourcing', description: 'Accurate, compliant payroll at scale.' },
-  { icon: Lightbulb, title: 'Management Consulting', to: '/staffing/management-consulting', description: 'People strategy, org design, and transformation.' },
+  {
+    icon: FileText,
+    title: "RPO (Recruitment Process Outsourcing)",
+    to: "/staffing/rpo",
+    description: "End-to-end recruitment as a managed service.",
+  },
+  {
+    icon: Globe,
+    title: "Offshore Staffing",
+    to: "/staffing/offshore-staffing",
+    description: "Build distributed teams with global talent.",
+  },
+  {
+    icon: Building2,
+    title: "On-Premise Staffing",
+    to: "/staffing/on-premise-staffing",
+    description: "Scalable on-site workforce for operations.",
+  },
+  {
+    icon: Link2,
+    title: "Contract Solutions",
+    to: "/staffing/contract-solutions",
+    description: "Flexible contract engagements for agility.",
+  },
+  {
+    icon: Users,
+    title: "Staffing Solutions",
+    to: "/staffing",
+    description: "Tailored hiring across roles and industries.",
+  },
+  {
+    icon: Wallet,
+    title: "Payroll Outsourcing",
+    to: "/staffing/payroll-outsourcing",
+    description: "Accurate, compliant payroll at scale.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Management Consulting",
+    to: "/staffing/management-consulting",
+    description: "People strategy, org design, and transformation.",
+  },
 ];
 
 const Staffing = () => {
@@ -27,10 +73,10 @@ const Staffing = () => {
   const { ref: whyRef, isVisible: whyVisible } = useScrollAnimation();
 
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
+    "@context": "https://schema.org",
+    "@type": "ItemList",
     itemListElement: services.map((s, i) => ({
-      '@type': 'Service',
+      "@type": "Service",
       name: s.title,
       position: i + 1,
       url: window.location.origin + s.to,
@@ -39,7 +85,7 @@ const Staffing = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Seo 
+      <Seo
         title="Staffing Services Hub | Your Workforce, Our Expertise"
         description="Explore our Staffing services: RPO, Offshore, On-Premise, Contract, Staffing Solutions, Payroll Outsourcing, and Management Consulting."
         jsonLd={jsonLd}
@@ -49,20 +95,31 @@ const Staffing = () => {
       {/* Hero */}
       <section className="relative page-top-spacing pb-16 px-4 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Staffing services hero banner" className="w-full h-full object-cover" />
+          <img
+            src={heroImage}
+            alt="Staffing services hero banner"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/90" />
         </div>
         <div className="container mx-auto max-w-6xl relative">
-          <div ref={heroRef} className={`max-w-3xl fade-up ${heroVisible ? 'visible' : ''}`}>
+          <div
+            ref={heroRef}
+            className={`max-w-3xl fade-up ${heroVisible ? "visible" : ""}`}
+          >
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               <Users className="w-4 h-4" />
               Premium Staffing
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Your Workforce, <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Our Expertise</span>
+              Your Workforce,{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Our Expertise
+              </span>
             </h1>
             <p className="text-xl text-gray-800 mt-4 max-w-2xl">
-              Build high-performing teams with speed, precision, and compliance—on-site, offshore, or hybrid.
+              Build high-performing teams with speed, precision, and
+              compliance—on-site, offshore, or hybrid.
             </p>
             <div className="mt-8">
               <a href="#services">
@@ -78,16 +135,34 @@ const Staffing = () => {
 
       {/* About */}
       <section className="py-12">
-        <div ref={aboutRef} className={`container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center fade-up ${aboutVisible ? 'visible' : ''}`}>
+        <div
+          ref={aboutRef}
+          className={`container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center fade-up ${
+            aboutVisible ? "visible" : ""
+          }`}
+        >
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">About Our Staffing</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+              About Our Staffing
+            </h2>
             <p className="text-lg text-gray-800">
-              We combine domain expertise with a process-led approach to deliver talent when and where you need it. From project-based spikes to ongoing team expansion, our models keep you flexible, compliant, and future-ready.
+              We combine domain expertise with a process-led approach to deliver
+              talent when and where you need it. From project-based spikes to
+              ongoing team expansion, our models keep you flexible, compliant,
+              and future-ready.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
-            {[{label:'Average time-to-hire', value:'48 hrs'},{label:'Roles filled',value:'500+'},{label:'Client retention',value:'95%'},{label:'Locations',value:'Pan-India'}].map((s, i) => (
-              <Card key={i} className="bg-card/60 backdrop-blur-sm border-0 shadow-lg">
+            {[
+              { label: "Average time-to-hire", value: "48 hrs" },
+              { label: "Roles filled", value: "500+" },
+              { label: "Client retention", value: "95%" },
+              { label: "Locations", value: "Pan-India" },
+            ].map((s, i) => (
+              <Card
+                key={i}
+                className="bg-card/60 backdrop-blur-sm border-0 shadow-lg"
+              >
                 <CardHeader>
                   <CardTitle className="text-2xl">{s.value}</CardTitle>
                 </CardHeader>
@@ -99,16 +174,26 @@ const Staffing = () => {
       </section>
 
       {/* Services grid */}
-      <section id="services" className="py-16 bg-gradient-to-b from-background to-accent/30">
+      <section
+        id="services"
+        className="py-16 bg-gradient-to-b from-background to-accent/30"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               <Briefcase className="w-4 h-4" />
               Our Solutions
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground">Services Overview</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+              Services Overview
+            </h2>
           </div>
-          <div ref={gridRef} className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up ${gridVisible ? 'visible' : ''}`}>
+          <div
+            ref={gridRef}
+            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up ${
+              gridVisible ? "visible" : ""
+            }`}
+          >
             {services.map((s, i) => {
               const Icon = s.icon;
               return (
@@ -118,9 +203,13 @@ const Staffing = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                         <Icon className="w-6 h-6 text-primary-foreground" />
                       </div>
-                      <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">{s.title}</CardTitle>
+                      <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
+                        {s.title}
+                      </CardTitle>
                     </CardHeader>
-                    <CardContent className="text-gray-800">{s.description}</CardContent>
+                    <CardContent className="text-gray-800">
+                      {s.description}
+                    </CardContent>
                   </Card>
                 </Link>
               );
@@ -131,22 +220,44 @@ const Staffing = () => {
 
       {/* Why choose us */}
       <section className="py-16">
-        <div ref={whyRef} className={`container mx-auto px-4 fade-up ${whyVisible ? 'visible' : ''}`}>
+        <div
+          ref={whyRef}
+          className={`container mx-auto px-4 fade-up ${
+            whyVisible ? "visible" : ""
+          }`}
+        >
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
               <Shield className="w-4 h-4" />
               Why Choose Us
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground">Speed. Precision. Compliance.</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground">
+              Speed. Precision. Compliance.
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {title:'Faster Hiring', desc:'Streamlined sourcing, screening, and onboarding.'},
-              {title:'Deep Expertise', desc:'Domain specialists across functions and levels.'},
-              {title:'Global Reach', desc:'Access to local and offshore talent pools.'},
-              {title:'Full Compliance', desc:'Zero-risk contracts, policies, and payroll.'},
+              {
+                title: "Faster Hiring",
+                desc: "Streamlined sourcing, screening, and onboarding.",
+              },
+              {
+                title: "Deep Expertise",
+                desc: "Domain specialists across functions and levels.",
+              },
+              {
+                title: "Global Reach",
+                desc: "Access to local and offshore talent pools.",
+              },
+              {
+                title: "Full Compliance",
+                desc: "Zero-risk contracts, policies, and payroll.",
+              },
             ].map((w, i) => (
-              <Card key={i} className="bg-card/60 backdrop-blur-sm border-0 shadow-lg">
+              <Card
+                key={i}
+                className="bg-card/60 backdrop-blur-sm border-0 shadow-lg"
+              >
                 <CardHeader>
                   <CardTitle className="text-foreground">{w.title}</CardTitle>
                 </CardHeader>

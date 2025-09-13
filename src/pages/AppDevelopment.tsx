@@ -1,76 +1,145 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Smartphone, Tablet, Monitor, CheckCircle, Code, Zap, Settings, Users, Target, FileText, Bug, TrendingUp, Shield, Clock, Wrench, Eye, Rocket, Database, Layers, Palette, Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import heroImage from '@/assets/app-development-service.jpg';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  Smartphone,
+  Tablet,
+  Monitor,
+  CheckCircle,
+  Code,
+  Zap,
+  Settings,
+  Users,
+  Target,
+  FileText,
+  Bug,
+  TrendingUp,
+  Shield,
+  Clock,
+  Wrench,
+  Eye,
+  Rocket,
+  Database,
+  Layers,
+  Palette,
+  Search,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import heroImage from "@/assets/app-development-service.webp";
 
 const AppDevelopment = () => {
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
   const { ref: processRef, isVisible: processVisible } = useScrollAnimation();
-  const { ref: platformsRef, isVisible: platformsVisible } = useScrollAnimation();
+  const { ref: platformsRef, isVisible: platformsVisible } =
+    useScrollAnimation();
 
   const services = [
     {
       icon: Code,
       title: "Custom Software Development",
-      description: "Reasonably priced custom software services that are perfectly 'fit' with your needs to produce decisive outcomes that immediately increase your bottom line.",
-      features: ["Custom Application Development", "Legacy System Modernization", "Enterprise Software Solutions", "ROI-Focused Development"]
+      description:
+        "Reasonably priced custom software services that are perfectly 'fit' with your needs to produce decisive outcomes that immediately increase your bottom line.",
+      features: [
+        "Custom Application Development",
+        "Legacy System Modernization",
+        "Enterprise Software Solutions",
+        "ROI-Focused Development",
+      ],
     },
     {
       icon: Settings,
       title: "Application Portfolio Management",
-      description: "Solutions to support, bolster, and manage an application portfolio with variety of development options in established and cutting-edge technologies.",
-      features: ["Portfolio Assessment", "Technology Modernization", "Application Lifecycle Management", "Performance Optimization"]
+      description:
+        "Solutions to support, bolster, and manage an application portfolio with variety of development options in established and cutting-edge technologies.",
+      features: [
+        "Portfolio Assessment",
+        "Technology Modernization",
+        "Application Lifecycle Management",
+        "Performance Optimization",
+      ],
     },
     {
       icon: Users,
       title: "End-to-End Solutions",
-      description: "Comprehensive suite of solutions including consulting, smooth cutover, followed by technical and functional support for complete project success.",
-      features: ["Consulting Services", "Seamless Migration", "Technical Support", "Functional Support"]
+      description:
+        "Comprehensive suite of solutions including consulting, smooth cutover, followed by technical and functional support for complete project success.",
+      features: [
+        "Consulting Services",
+        "Seamless Migration",
+        "Technical Support",
+        "Functional Support",
+      ],
     },
     {
       icon: Wrench,
       title: "Maintenance Services",
-      description: "Preventive, adaptive, and remedial maintenance services ensuring seamless transition of functional and technological improvements.",
-      features: ["Preventive Maintenance", "Adaptive Solutions", "Remedial Services", "Knowledge Transfer"]
+      description:
+        "Preventive, adaptive, and remedial maintenance services ensuring seamless transition of functional and technological improvements.",
+      features: [
+        "Preventive Maintenance",
+        "Adaptive Solutions",
+        "Remedial Services",
+        "Knowledge Transfer",
+      ],
     },
     {
       icon: Bug,
       title: "Quality Assurance & Support",
-      description: "Bug fixes, error diagnosis and correction, improvement suggestions, technical documentation upkeep, and 24x7 Helpdesk operation.",
-      features: ["Bug Fixes & Error Correction", "Performance Monitoring", "Technical Documentation", "24x7 Helpdesk Support"]
+      description:
+        "Bug fixes, error diagnosis and correction, improvement suggestions, technical documentation upkeep, and 24x7 Helpdesk operation.",
+      features: [
+        "Bug Fixes & Error Correction",
+        "Performance Monitoring",
+        "Technical Documentation",
+        "24x7 Helpdesk Support",
+      ],
     },
     {
       icon: TrendingUp,
       title: "Continuous Improvement",
-      description: "Guaranteed Continuous Productivity Improvement through established strategies, innovations, and best practices for sustained growth.",
-      features: ["Performance Evaluation", "Strategy Implementation", "Innovation Integration", "Best Practices Application"]
-    }
+      description:
+        "Guaranteed Continuous Productivity Improvement through established strategies, innovations, and best practices for sustained growth.",
+      features: [
+        "Performance Evaluation",
+        "Strategy Implementation",
+        "Innovation Integration",
+        "Best Practices Application",
+      ],
+    },
   ];
 
   const platforms = [
-    { 
+    {
       icon: Smartphone,
-      name: "Native Mobile Apps", 
-      description: "iOS and Android applications with platform-specific optimizations",
-      technologies: ["Swift/iOS", "Kotlin/Android", "React Native", "Flutter"]
+      name: "Native Mobile Apps",
+      description:
+        "iOS and Android applications with platform-specific optimizations",
+      technologies: ["Swift/iOS", "Kotlin/Android", "React Native", "Flutter"],
     },
-    { 
+    {
       icon: Monitor,
-      name: "Desktop Applications", 
-      description: "Cross-platform desktop solutions for Windows, Mac, and Linux",
-      technologies: ["Electron", ".NET", "Java", "Python"]
+      name: "Desktop Applications",
+      description:
+        "Cross-platform desktop solutions for Windows, Mac, and Linux",
+      technologies: ["Electron", ".NET", "Java", "Python"],
     },
-    { 
+    {
       icon: Database,
-      name: "Web Applications", 
-      description: "Dynamic web applications with modern frameworks and technologies",
-      technologies: ["React", "Angular", "Vue.js", "Node.js"]
-    }
+      name: "Web Applications",
+      description:
+        "Dynamic web applications with modern frameworks and technologies",
+      technologies: ["React", "Angular", "Vue.js", "Node.js"],
+    },
   ];
 
   const workProcess = [
@@ -78,65 +147,108 @@ const AppDevelopment = () => {
       icon: Target,
       step: "01",
       title: "Requirement & Planning",
-      description: "Understanding your business purpose, primary goals, and target audience to suggest the right plan for your project.",
-      details: ["Business Analysis", "Goal Definition", "Target Audience Research", "Project Planning", "FREE Examination"]
+      description:
+        "Understanding your business purpose, primary goals, and target audience to suggest the right plan for your project.",
+      details: [
+        "Business Analysis",
+        "Goal Definition",
+        "Target Audience Research",
+        "Project Planning",
+        "FREE Examination",
+      ],
     },
     {
       icon: Palette,
-      step: "02", 
+      step: "02",
       title: "Design & Development",
-      description: "Designing the right layouts, color combinations & screens. Implementing content, design screens and required frameworks.",
-      details: ["UI/UX Design", "Screen Layouts", "Color Schemes", "Framework Implementation", "Content Integration"]
+      description:
+        "Designing the right layouts, color combinations & screens. Implementing content, design screens and required frameworks.",
+      details: [
+        "UI/UX Design",
+        "Screen Layouts",
+        "Color Schemes",
+        "Framework Implementation",
+        "Content Integration",
+      ],
     },
     {
       icon: Eye,
       step: "03",
       title: "Testing & Quality Assurance",
-      description: "Comprehensive testing to ensure all forms, scripts, and functionality work correctly before launch.",
-      details: ["Functionality Testing", "Performance Testing", "Security Testing", "User Acceptance Testing"]
+      description:
+        "Comprehensive testing to ensure all forms, scripts, and functionality work correctly before launch.",
+      details: [
+        "Functionality Testing",
+        "Performance Testing",
+        "Security Testing",
+        "User Acceptance Testing",
+      ],
     },
     {
       icon: Rocket,
       step: "04",
       title: "Launch & Support",
-      description: "Launching your application with ongoing monitoring, updates, and maintenance for optimal performance.",
-      details: ["Application Launch", "Performance Monitoring", "Regular Updates", "Continuous Support"]
-    }
+      description:
+        "Launching your application with ongoing monitoring, updates, and maintenance for optimal performance.",
+      details: [
+        "Application Launch",
+        "Performance Monitoring",
+        "Regular Updates",
+        "Continuous Support",
+      ],
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative page-top-spacing pb-16 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
         <div className="container mx-auto max-w-6xl relative">
-          <div 
+          <div
             ref={heroRef}
-            className={`grid lg:grid-cols-2 gap-12 items-center fade-up ${heroVisible ? 'visible' : ''}`}
+            className={`grid lg:grid-cols-2 gap-12 items-center fade-up ${
+              heroVisible ? "visible" : ""
+            }`}
           >
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                   Custom Software &
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"> Application Solutions</span>
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    {" "}
+                    Application Solutions
+                  </span>
                 </h1>
                 <p className="text-xl text-gray-800 leading-relaxed">
-                  At MangosOrange, we offer reasonably priced custom software services that are perfectly "fit" with your needs. We design and build technologies to produce decisive outcomes that immediately increase your ROI following a FREE examination of your particular demands and business processes.
+                  At MangosOrange, we offer reasonably priced custom software
+                  services that are perfectly "fit" with your needs. We design
+                  and build technologies to produce decisive outcomes that
+                  immediately increase your ROI following a FREE examination of
+                  your particular demands and business processes.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>End-to-end comprehensive suite of solutions with consulting</span>
+                    <span>
+                      End-to-end comprehensive suite of solutions with
+                      consulting
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Established and cutting-edge technology development options</span>
+                    <span>
+                      Established and cutting-edge technology development
+                      options
+                    </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Technical and functional support with smooth cutover</span>
+                    <span>
+                      Technical and functional support with smooth cutover
+                    </span>
                   </div>
                 </div>
               </div>
@@ -151,9 +263,9 @@ const AppDevelopment = () => {
             </div>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-              <img 
-                src={heroImage} 
-                alt="Custom Application Development Services" 
+              <img
+                src={heroImage}
+                alt="Custom Application Development Services"
                 className="relative w-full h-auto rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -169,19 +281,23 @@ const AppDevelopment = () => {
               Comprehensive Application Development Services
             </h2>
             <p className="text-xl text-gray-800 max-w-3xl mx-auto">
-              We offer solutions to support, bolster, and manage an application portfolio with a variety of development options in both established and cutting-edge technologies.
+              We offer solutions to support, bolster, and manage an application
+              portfolio with a variety of development options in both
+              established and cutting-edge technologies.
             </p>
           </div>
-          
-          <div 
+
+          <div
             ref={servicesRef}
-            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up ${servicesVisible ? 'visible' : ''}`}
+            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-up ${
+              servicesVisible ? "visible" : ""
+            }`}
           >
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-card/50 backdrop-blur-sm"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -199,7 +315,10 @@ const AppDevelopment = () => {
                   <CardContent>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-gray-800">
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-gray-800"
+                        >
                           <CheckCircle className="w-4 h-4 text-primary" />
                           {feature}
                         </li>
@@ -222,19 +341,23 @@ const AppDevelopment = () => {
               Multi-Platform Application Development
             </h2>
             <p className="text-xl text-gray-800 max-w-3xl mx-auto">
-              We provide clients with a variety of development options in both established and cutting-edge technologies across all major platforms.
+              We provide clients with a variety of development options in both
+              established and cutting-edge technologies across all major
+              platforms.
             </p>
           </div>
-          
-          <div 
+
+          <div
             ref={platformsRef}
-            className={`grid md:grid-cols-3 gap-8 fade-up ${platformsVisible ? 'visible' : ''}`}
+            className={`grid md:grid-cols-3 gap-8 fade-up ${
+              platformsVisible ? "visible" : ""
+            }`}
           >
             {platforms.map((platform, index) => {
               const Icon = platform.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-card/50 backdrop-blur-sm text-center"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
@@ -250,7 +373,10 @@ const AppDevelopment = () => {
                     </CardDescription>
                     <div className="flex flex-wrap gap-2 justify-center">
                       {platform.technologies.map((tech, idx) => (
-                        <span key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                        <span
+                          key={idx}
+                          className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
+                        >
                           {tech}
                         </span>
                       ))}
@@ -272,19 +398,24 @@ const AppDevelopment = () => {
               How We Work
             </h2>
             <p className="text-xl text-gray-800 max-w-3xl mx-auto">
-              We make sure that existing development team's knowledge is seamlessly transferred. We collaborate with client's business and IT teams to ensure smooth transition of functional and technological improvements.
+              We make sure that existing development team's knowledge is
+              seamlessly transferred. We collaborate with client's business and
+              IT teams to ensure smooth transition of functional and
+              technological improvements.
             </p>
           </div>
-          
-          <div 
+
+          <div
             ref={processRef}
-            className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 fade-up ${processVisible ? 'visible' : ''}`}
+            className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 fade-up ${
+              processVisible ? "visible" : ""
+            }`}
           >
             {workProcess.map((process, index) => {
               const Icon = process.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 bg-card/50 backdrop-blur-sm text-center"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
@@ -307,7 +438,10 @@ const AppDevelopment = () => {
                   <CardContent>
                     <ul className="space-y-1">
                       {process.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-xs text-gray-800">
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-xs text-gray-800"
+                        >
                           <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
                           {detail}
                         </li>
@@ -330,29 +464,48 @@ const AppDevelopment = () => {
               Lasting Connections & Continuous Support
             </h2>
             <p className="text-xl text-gray-800 leading-relaxed mb-8">
-              We create and preserve lasting connections with our customers. We promise to provide you with application solutions that are incredibly useful. We can manage various domains from various sectors thanks to our capabilities with dedicated Project Coordinators providing comprehensive project information.
+              We create and preserve lasting connections with our customers. We
+              promise to provide you with application solutions that are
+              incredibly useful. We can manage various domains from various
+              sectors thanks to our capabilities with dedicated Project
+              Coordinators providing comprehensive project information.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">24x7 Helpdesk</h3>
-                <p className="text-sm text-gray-800">Round-the-clock support with dedicated helpdesk for immediate assistance</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  24x7 Helpdesk
+                </h3>
+                <p className="text-sm text-gray-800">
+                  Round-the-clock support with dedicated helpdesk for immediate
+                  assistance
+                </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <TrendingUp className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Continuous Improvement</h3>
-                <p className="text-sm text-gray-800">Guaranteed productivity improvement through established strategies and innovations</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Continuous Improvement
+                </h3>
+                <p className="text-sm text-gray-800">
+                  Guaranteed productivity improvement through established
+                  strategies and innovations
+                </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">Quality Assurance</h3>
-                <p className="text-sm text-gray-800">Data integrity monitoring, performance tracking, and documentation maintenance</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Quality Assurance
+                </h3>
+                <p className="text-sm text-gray-800">
+                  Data integrity monitoring, performance tracking, and
+                  documentation maintenance
+                </p>
               </div>
             </div>
           </div>
@@ -367,7 +520,10 @@ const AppDevelopment = () => {
               Ready to Build Your Custom Application?
             </h2>
             <p className="text-xl text-gray-800">
-              Transform your ideas into powerful applications that increase your ROI. Complete our request information form and our consulting representative will get in touch with you shortly for a FREE examination.
+              Transform your ideas into powerful applications that increase your
+              ROI. Complete our request information form and our consulting
+              representative will get in touch with you shortly for a FREE
+              examination.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
@@ -380,15 +536,21 @@ const AppDevelopment = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 pt-12 border-t border-border/50">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary mb-2">ROI+</div>
-                <div className="text-sm text-gray-800">Immediate Bottom Line Increase</div>
+                <div className="text-sm text-gray-800">
+                  Immediate Bottom Line Increase
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary mb-2">FREE</div>
-                <div className="text-sm text-gray-800">Business Process Examination</div>
+                <div className="text-sm text-gray-800">
+                  Business Process Examination
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-sm text-gray-800">Technical Support Available</div>
+                <div className="text-sm text-gray-800">
+                  Technical Support Available
+                </div>
               </div>
             </div>
           </div>

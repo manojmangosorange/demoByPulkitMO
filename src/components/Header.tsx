@@ -5,7 +5,7 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useScrollToSection } from '@/utils/navigation';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import navLogo from '@/assets/c6935172-f978-4b7f-a28c-db62025bfe9b.png';
+import navLogo from '@/assets/c6935172-f978-4b7f-a28c-db62025bfe9b.webp';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
