@@ -231,7 +231,7 @@ const AssociatedWithSection = () => {
               
               <div className="flex items-center justify-center h-full relative z-10">
                 <div className={`flex items-center justify-center ${
-                  ['Google Partner', 'Microsoft Partner', 'HP'].includes(partner.name) ? 'h-[140px]' : 'h-16'
+                  [ 'Microsoft Partner', 'HP'].includes(partner.name) ? 'h-[140px]' : 'h-16'
                 }`}>
                   <img 
                     src={partner.logo} 
