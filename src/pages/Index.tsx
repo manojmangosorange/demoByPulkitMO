@@ -34,7 +34,7 @@ const Index = () => {
         title="MangosOrange - Leading IT Services & Cloud Solutions Provider in India"
         description={generateMetaDescription('home')}
         keywords={generateKeywords('home')}
-        canonical="https://mangosorange.co.in"
+        canonical="https://mangosorange.com"
         jsonLd={structuredData}
       />
       <Header />

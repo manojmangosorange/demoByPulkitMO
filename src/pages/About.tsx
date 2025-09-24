@@ -80,6 +80,40 @@ const About = () => {
     },
   };
 
+  const partnersData = [
+  { 
+    name: "TCIL", 
+    logo: "/Empanelment/TCIL.png",
+    alt: "TCIL"
+  },
+  { 
+    name: "ITI", 
+    logo: "/Empanelment/ITI.png",
+    alt: "ITI"
+  },
+  { 
+    name: "RAILTEL", 
+    logo: "/Empanelment/railtel.png",
+    alt: "RAILTEL"
+  },
+  { 
+    name: "MPCON", 
+    logo: "/Empanelment/MPCON.avif",
+    alt: "MPCON"
+  },
+  { 
+    name: "AFC", 
+    logo: "/Empanelment/AFC.png",
+    alt: "AFC"
+  },
+  { 
+    name: "CEL", 
+    logo: "/Empanelment/CEL.avif",
+    alt: "CEL"
+  },
+  
+];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -144,6 +178,47 @@ const About = () => {
               ))}
             </div>
           </div>
+        </section>
+
+        <section>
+          <div className="container mx-auto px-4 py-10">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 transition-all duration-700 delay-200 opacity-100 translate-y-5">
+            Empanelment's With PSU's
+          </h3>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto mb-6 rounded-full transition-all duration-700 delay-300 opacity-0 scale-75" />
+          
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {partnersData.map((partner, index) => (
+            <div
+              key={partner.name}
+              className={`relative bg-card rounded-xl border-2 border-border/50 transition-all duration-500 hover:scale-105 hover:shadow-xl group overflow-hidden p-6 h-32 `}
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              {/* Background gradient on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <div className="flex items-center justify-center h-full relative z-10">
+                <div className={`flex items-center justify-center ${
+                  ['ITI','AFC'].includes(partner.name) ? 'h-16 items-end' : 'h-[110px]'
+                }`}>
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.alt}
+                    className="max-w-full max-h-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Hover overlay */}
+              <div className="absolute inset-0 rounded-xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          ))}
+        </div>
+        </div>
         </section>
 
         {/* Our Key Strength & Qualities */}
