@@ -67,7 +67,7 @@ const CICDPipelines = lazy(() => import('@/pages/cloud/CICDPipelines'));
 const InfrastructureAsCode = lazy(() => import('@/pages/cloud/InfrastructureAsCode'));
 const TwentyFourSevenSupport = lazy(() => import('@/pages/cloud/TwentyFourSevenSupport'));
 
-// Optimized QueryClient configuration
+// Optimized QueryClient configuration for better performance
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
