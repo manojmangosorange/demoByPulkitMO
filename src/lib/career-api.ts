@@ -210,12 +210,13 @@ export const careerAPI = {
         .from('applicants')
         .select(`
           *,
-          job_postings!inner (
+          job_postings (
             id,
             title
           )
         `)
-        .order('applied_at', { ascending: false });
+        .order('applied_at', { ascending: false })
+        .not('job_id', 'is', null); // Only job-specific applications
 
       if (jobId) {
         query = query.eq('job_id', jobId);
@@ -324,6 +325,38 @@ export const careerAPI = {
     } catch (error) {
       console.error('Error submitting application:', error);
       return false;
+    }
+  },
+
+  async getGeneralApplications(): Promise<Applicant[]> {
+    try {
+      const { data, error } = await supabase
+        .from('applicants')
+        .select('*')
+        .is('job_id', null) // Only general applications (resume drop)
+        .order('applied_at', { ascending: false });
+
+      if (error) {
+        console.error('Error fetching general applications:', error);
+        throw error;
+      }
+
+      return (data ?? []).map((applicant: any) => ({
+        id: String(applicant.id),
+        jobId: '', // No specific job for general applications
+        name: applicant.name || '',
+        email: applicant.email || '',
+        phone: applicant.phone || '',
+        resumeUrl: applicant.resume_url || '',
+        coverLetter: applicant.cover_letter || '',
+        status: applicant.status || 'Applied',
+        notes: applicant.notes || '',
+        appliedAt: applicant.applied_at,
+        updatedAt: applicant.updated_at,
+      }));
+    } catch (error) {
+      console.error('Error fetching general applications:', error);
+      return [];
     }
   },
 

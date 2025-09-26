@@ -13,9 +13,10 @@ interface ApplicantCardProps {
   applicant: Applicant;
   onUpdate: () => void;
   jobTitle?: string;
+  isGeneralApplication?: boolean;
 }
 
-const ApplicantCard = ({ applicant, onUpdate, jobTitle }: ApplicantCardProps) => {
+const ApplicantCard = ({ applicant, onUpdate, jobTitle, isGeneralApplication = false }: ApplicantCardProps) => {
   const [editing, setEditing] = useState(false);
   const [status, setStatus] = useState(applicant.status);
   const [notes, setNotes] = useState(applicant.notes || '');
@@ -63,11 +64,20 @@ const ApplicantCard = ({ applicant, onUpdate, jobTitle }: ApplicantCardProps) =>
         <div className="flex items-start justify-between">
           <div>
             <CardTitle className="text-lg">{applicant.name}</CardTitle>
-            {jobTitle && (
-              <Badge variant="secondary" className="mt-2 mb-1">
-                {jobTitle}
-              </Badge>
-            )}
+            <div className="mt-2 mb-1">
+              {isGeneralApplication ? (
+                <Badge variant="outline" className="border-blue-500 text-blue-700 bg-blue-50">
+                  <FileText className="w-3 h-3 mr-1" />
+                  General Application (Resume Drop)
+                </Badge>
+              ) : (
+                jobTitle && (
+                  <Badge variant="secondary">
+                    {jobTitle}
+                  </Badge>
+                )
+              )}
+            </div>
             <div className="flex items-center gap-4 mt-2 text-sm text-gray-800">
               <div className="flex items-center gap-1">
                 <Mail className="w-4 h-4" />

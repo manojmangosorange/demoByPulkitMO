@@ -8,7 +8,8 @@ import {
   Settings, 
   LogOut,
   Menu,
-  X
+  X,
+  FileText
 } from 'lucide-react';
 import { authService } from '@/lib/auth';
 import { Admin } from '@/types/career';
@@ -52,6 +53,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
       { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
       { name: 'Job Postings', href: '/admin/jobs', icon: Briefcase },
       { name: 'Applicants', href: '/admin/applicants', icon: Users },
+      { name: 'Resume Drop', href: '/admin/resume-drop', icon: FileText },
       { name: 'Settings', href: '/admin/settings', icon: Settings },
     ];
 
