@@ -224,7 +224,7 @@ const App = () => (
               <Careers />
             </Suspense>
           } />
-          <Route path="/careers/job/:jobId" element={
+          <Route path="/careers/:jobSlug" element={
             <Suspense fallback={<PageLoader />}>
               <Careers />
             </Suspense>

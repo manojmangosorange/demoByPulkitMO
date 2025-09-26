@@ -2,6 +2,7 @@ import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { JobPosting } from '@/types/career';
+import { generateJobSlug } from '@/utils/slugs';
 import { Share2, MessageCircle, Linkedin, Mail, Copy, Check } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -17,8 +18,9 @@ const ShareJobModal = ({ isOpen, onClose, job }: ShareJobModalProps) => {
 
   if (!job) return null;
 
-  // Generate unique job URL
-  const jobUrl = `${window.location.origin}/careers/job/${job.id}`;
+  // Generate unique job URL with SEO-friendly slug
+  const jobSlug = generateJobSlug(job);
+  const jobUrl = `${window.location.origin}/careers/${jobSlug}`;
   const jobTitle = encodeURIComponent(`${job.title} at MangosOrange`);
   const jobDescription = encodeURIComponent(`Check out this ${job.type} position: ${job.title} in ${job.location}. Apply now!`);
 

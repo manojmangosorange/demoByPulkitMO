@@ -15,11 +15,13 @@ import { careerAPI } from '@/lib/career-api';
 import { JobPosting } from '@/types/career';
 import { hasAppliedToJob, markJobAsApplied } from '@/utils/applicationStatus';
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { generateJobSlug, findJobBySlug } from '@/utils/slugs';
 import { CalendarClock, MapPin, Briefcase, Clock, Search, Users, Award, Heart, Coffee, Zap, Shield, Globe, Eye, Send, Share2 } from 'lucide-react';
 const Careers = () => {
-  const { jobId } = useParams();
+  const { jobSlug } = useParams();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [jobs, setJobs] = useState<JobPosting[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -49,14 +51,28 @@ const Careers = () => {
   }, []);
 
   useEffect(() => {
-    if (jobId && jobs.length > 0) {
-      const job = jobs.find(j => j.id === jobId);
+    if (jobs.length > 0) {
+      let job = null;
+      
+      // Check for slug in URL params first
+      if (jobSlug) {
+        job = findJobBySlug(jobs, jobSlug);
+      }
+      
+      // Fallback to query param for backward compatibility
+      if (!job) {
+        const jobIdFromQuery = searchParams.get('job');
+        if (jobIdFromQuery) {
+          job = jobs.find(j => j.id === jobIdFromQuery);
+        }
+      }
+      
       if (job) {
         setViewingJob(job);
         setShowJobDetailModal(true);
       }
     }
-  }, [jobId, jobs]);
+  }, [jobSlug, jobs, searchParams]);
 
   const loadJobs = async () => {
     try {
@@ -73,7 +89,8 @@ const Careers = () => {
     setShowApplicationModal(true);
   };
   const handleView = (job: JobPosting) => {
-    navigate(`/careers/job/${job.id}`);
+    const slug = generateJobSlug(job);
+    navigate(`/careers/${slug}`);
     setViewingJob(job);
     setShowJobDetailModal(true);
   };
