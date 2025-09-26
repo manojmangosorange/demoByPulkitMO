@@ -307,7 +307,7 @@ const App = () => (
           <Route path="/admin/dashboard" element={
             <Suspense fallback={<PageLoader />}>
               <AdminOnlyRoute>
-                <AdminDashboard />
+                <AdminDashboardFull />
               </AdminOnlyRoute>
             </Suspense>
           } />
