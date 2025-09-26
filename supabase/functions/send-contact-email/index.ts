@@ -118,7 +118,7 @@ const handler = async (req: Request): Promise<Response> => {
 
         console.log(`Contact email sent successfully to ${recipient}:`, data);
         return { recipient, success: true, data };
-      } catch (err) {
+      } catch (err: any) {
         console.error(`Exception sending email to ${recipient}:`, err);
         return { recipient, success: false, error: err.message };
       }

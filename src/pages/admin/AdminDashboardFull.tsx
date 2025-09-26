@@ -14,8 +14,23 @@ import AdminLayout from '@/components/admin/AdminLayout';
 import { authService } from '@/lib/auth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
-import { UserPlus, Users, Trash2, Key, Shield, Eye, EyeOff } from 'lucide-react';
-import { Admin } from '@/types/career';
+import { 
+  UserPlus, 
+  Users, 
+  Trash2, 
+  Key, 
+  Shield, 
+  Eye, 
+  EyeOff, 
+  Briefcase, 
+  Clock, 
+  TrendingUp,
+  Calendar,
+  Mail,
+  Phone
+} from 'lucide-react';
+import { Admin, DashboardStats } from '@/types/career';
+import { careerAPI } from '@/lib/career-api';
 const createRecruiterSchema = z.object({
   name: z.string().min(1, 'Please enter the name'),
   email: z.string().email('Please enter a valid email'),
@@ -32,8 +47,16 @@ interface RecruiterInfo {
   plain_password?: string; // For newly created users only
 }
 const AdminDashboardFull = () => {
+  const [stats, setStats] = useState<DashboardStats>({
+    totalJobs: 0,
+    activeJobs: 0,
+    totalApplicants: 0,
+    pendingApplications: 0,
+    recentApplications: [],
+  });
   const [recruiters, setRecruiters] = useState<RecruiterInfo[]>([]);
   const [loading, setLoading] = useState(false);
+  const [statsLoading, setStatsLoading] = useState(true);
   const [createDialogOpen, setCreateDialogOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [visiblePasswords, setVisiblePasswords] = useState<Record<string, boolean>>({});
@@ -48,7 +71,19 @@ const AdminDashboardFull = () => {
   });
   useEffect(() => {
     loadRecruiters();
+    loadStats();
   }, []);
+
+  const loadStats = async () => {
+    try {
+      const dashboardStats = await careerAPI.getDashboardStats();
+      setStats(dashboardStats);
+    } catch (error) {
+      console.error('Error loading dashboard stats:', error);
+    } finally {
+      setStatsLoading(false);
+    }
+  };
   const loadRecruiters = async () => {
     try {
       const {
@@ -155,8 +190,153 @@ const AdminDashboardFull = () => {
           </Badge>
         </div>
 
-        <Tabs defaultValue="recruiters" className="space-y-6">
-          
+        <Tabs defaultValue="overview" className="space-y-6">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="overview">Dashboard Overview</TabsTrigger>
+            <TabsTrigger value="recruiters">Recruiter Management</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="overview" className="space-y-6">
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {statsLoading ? (
+                Array.from({ length: 4 }).map((_, index) => (
+                  <Card key={index} className="hover:shadow-md transition-shadow">
+                    <CardContent className="p-6">
+                      <div className="animate-pulse">
+                        <div className="h-4 bg-muted rounded w-1/2 mb-2"></div>
+                        <div className="h-8 bg-muted rounded w-1/3"></div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))
+              ) : (
+                [
+                  {
+                    title: 'Total Jobs',
+                    value: stats.totalJobs,
+                    icon: Briefcase,
+                    color: 'text-blue-600',
+                    bgColor: 'bg-blue-100',
+                  },
+                  {
+                    title: 'Active Jobs',
+                    value: stats.activeJobs,
+                    icon: TrendingUp,
+                    color: 'text-green-600',
+                    bgColor: 'bg-green-100',
+                  },
+                  {
+                    title: 'Total Applicants',
+                    value: stats.totalApplicants,
+                    icon: Users,
+                    color: 'text-purple-600',
+                    bgColor: 'bg-purple-100',
+                  },
+                  {
+                    title: 'Pending Applications',
+                    value: stats.pendingApplications,
+                    icon: Clock,
+                    color: 'text-orange-600',
+                    bgColor: 'bg-orange-100',
+                  },
+                ].map((stat) => {
+                  const Icon = stat.icon;
+                  return (
+                    <Card key={stat.title} className="hover:shadow-md transition-shadow">
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="text-sm font-medium text-muted-foreground">
+                              {stat.title}
+                            </p>
+                            <p className="text-2xl font-bold text-foreground">
+                              {stat.value}
+                            </p>
+                          </div>
+                          <div className={`w-12 h-12 ${stat.bgColor} rounded-lg flex items-center justify-center`}>
+                            <Icon className={`w-6 h-6 ${stat.color}`} />
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })
+              )}
+            </div>
+
+            {/* Recent Applications */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Recent Applications</CardTitle>
+                <CardDescription>Latest job applications in the system</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {statsLoading ? (
+                  <div className="space-y-4">
+                    {Array.from({ length: 3 }).map((_, index) => (
+                      <div key={index} className="p-4 border border-border rounded-lg">
+                        <div className="animate-pulse">
+                          <div className="h-4 bg-muted rounded w-1/3 mb-2"></div>
+                          <div className="h-3 bg-muted rounded w-1/2 mb-1"></div>
+                          <div className="h-3 bg-muted rounded w-2/3"></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : stats.recentApplications.length === 0 ? (
+                  <div className="text-center py-8 text-muted-foreground">
+                    No recent applications
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {stats.recentApplications.map((applicant) => (
+                      <div
+                        key={applicant.id}
+                        className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors"
+                      >
+                        <div className="flex-1">
+                          {/* Name + Status */}
+                          <div className="flex items-center gap-3 mb-1">
+                            <h3 className="font-medium text-foreground">
+                              {applicant.name}
+                            </h3>
+                            <Badge variant="outline">
+                              {applicant.status}
+                            </Badge>
+                          </div>
+
+                          {/* Application ID */}
+                          <p className="text-sm text-foreground mb-2">
+                            Application ID:{" "}
+                            <span className="font-medium">{applicant.id.slice(0, 8)}</span>
+                          </p>
+
+                          {/* Contact + Date */}
+                          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                            <div className="flex items-center gap-1">
+                              <Mail className="w-3 h-3" />
+                              {applicant.email}
+                            </div>
+                            {applicant.phone && (
+                              <div className="flex items-center gap-1">
+                                <Phone className="w-3 h-3" />
+                                {applicant.phone}
+                              </div>
+                            )}
+                            <div className="flex items-center gap-1">
+                              <Calendar className="w-3 h-3" />
+                              {new Date(applicant.appliedAt).toLocaleDateString()}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="recruiters" className="space-y-6">
             <div className="flex items-center justify-between">
