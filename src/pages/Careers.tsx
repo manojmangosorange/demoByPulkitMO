@@ -412,11 +412,16 @@ const Careers = () => {
     }} onSuccess={handleApplicationSuccess} />
 
       {/* Job Detail Modal */}
-      <JobDetailModal job={viewingJob} open={showJobDetailModal} onClose={() => {
-      setShowJobDetailModal(false);
-      setViewingJob(null);
-      navigate('/careers');
-    }} />
+      <JobDetailModal 
+        job={viewingJob} 
+        open={showJobDetailModal} 
+        onClose={() => {
+          setShowJobDetailModal(false);
+          setViewingJob(null);
+          navigate('/careers');
+        }}
+        onApply={handleApply}
+      />
 
       {/* Quick Application Modal */}
       <QuickApplicationModal open={showQuickApplicationModal} onClose={() => setShowQuickApplicationModal(false)} onSuccess={() => setShowQuickApplicationModal(false)} />

@@ -1,22 +1,35 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { JobPosting } from '@/types/career';
+import { hasAppliedToJob } from '@/utils/applicationStatus';
 import { 
   MapPin, 
   Briefcase, 
   Calendar,
   Clock,
-  DollarSign
+  DollarSign,
+  Send,
+  CheckCircle
 } from 'lucide-react';
 
 interface JobDetailModalProps {
   job: JobPosting | null;
   open: boolean;
   onClose: () => void;
+  onApply?: (job: JobPosting) => void;
 }
 
-const JobDetailModal = ({ job, open, onClose }: JobDetailModalProps) => {
+const JobDetailModal = ({ job, open, onClose, onApply }: JobDetailModalProps) => {
   if (!job) return null;
+
+  const hasApplied = hasAppliedToJob(job.id);
+
+  const handleApply = () => {
+    if (onApply && !hasApplied) {
+      onApply(job);
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -95,6 +108,37 @@ const JobDetailModal = ({ job, open, onClose }: JobDetailModalProps) => {
               dangerouslySetInnerHTML={{ __html: job.requirements }}
             />
           </section>
+
+          {/* Apply Button Section */}
+          <div className="sticky bottom-0 bg-background/95 backdrop-blur-sm p-6 -mx-6 -mb-6 border-t border-border">
+            <div className="flex items-center justify-between">
+              <div className="flex-1">
+                <p className="text-sm text-gray-800 mb-1">
+                  Ready to join our team?
+                </p>
+                <p className="text-xs text-gray-800">
+                  Application deadline: {new Date(job.deadline).toLocaleDateString()}
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                {hasApplied ? (
+                  <Button disabled className="px-8 py-6 text-base cursor-not-allowed">
+                    <CheckCircle className="w-5 h-5 mr-2" />
+                    Applied
+                  </Button>
+                ) : (
+                  <Button 
+                    onClick={handleApply}
+                    size="lg"
+                    className="px-8 py-6 text-base font-medium bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  >
+                    <Send className="w-5 h-5 mr-2" />
+                    Apply for this Position
+                  </Button>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
