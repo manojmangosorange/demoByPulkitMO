@@ -224,6 +224,11 @@ const App = () => (
               <Careers />
             </Suspense>
           } />
+          <Route path="/careers/job/:jobId" element={
+            <Suspense fallback={<PageLoader />}>
+              <Careers />
+            </Suspense>
+          } />
           <Route path="/career" element={<Navigate to="/careers" replace />} />
           
           {/* Cloud Infrastructure Routes */}

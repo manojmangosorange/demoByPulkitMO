@@ -18,7 +18,7 @@ const ShareJobModal = ({ isOpen, onClose, job }: ShareJobModalProps) => {
   if (!job) return null;
 
   // Generate unique job URL
-  const jobUrl = `${window.location.origin}/careers?job=${job.id}`;
+  const jobUrl = `${window.location.origin}/careers/job/${job.id}`;
   const jobTitle = encodeURIComponent(`${job.title} at MangosOrange`);
   const jobDescription = encodeURIComponent(`Check out this ${job.type} position: ${job.title} in ${job.location}. Apply now!`);
 

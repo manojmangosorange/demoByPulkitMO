@@ -15,8 +15,11 @@ import { careerAPI } from '@/lib/career-api';
 import { JobPosting } from '@/types/career';
 import { hasAppliedToJob, markJobAsApplied } from '@/utils/applicationStatus';
 import { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { CalendarClock, MapPin, Briefcase, Clock, Search, Users, Award, Heart, Coffee, Zap, Shield, Globe, Eye, Send, Share2 } from 'lucide-react';
 const Careers = () => {
+  const { jobId } = useParams();
+  const navigate = useNavigate();
   const [jobs, setJobs] = useState<JobPosting[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -44,6 +47,17 @@ const Careers = () => {
   useEffect(() => {
     loadJobs();
   }, []);
+
+  useEffect(() => {
+    if (jobId && jobs.length > 0) {
+      const job = jobs.find(j => j.id === jobId);
+      if (job) {
+        setViewingJob(job);
+        setShowJobDetailModal(true);
+      }
+    }
+  }, [jobId, jobs]);
+
   const loadJobs = async () => {
     try {
       const jobPostings = await careerAPI.getJobPostings();
@@ -59,6 +73,7 @@ const Careers = () => {
     setShowApplicationModal(true);
   };
   const handleView = (job: JobPosting) => {
+    navigate(`/careers/job/${job.id}`);
     setViewingJob(job);
     setShowJobDetailModal(true);
   };
@@ -383,6 +398,7 @@ const Careers = () => {
       <JobDetailModal job={viewingJob} open={showJobDetailModal} onClose={() => {
       setShowJobDetailModal(false);
       setViewingJob(null);
+      navigate('/careers');
     }} />
 
       {/* Quick Application Modal */}
